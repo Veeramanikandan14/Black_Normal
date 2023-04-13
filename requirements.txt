@@ -1,3 +1,4 @@
+fastbook
 fastai
 voila
 ipywidgets==7.7.5
