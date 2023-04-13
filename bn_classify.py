@@ -43,8 +43,8 @@ VBox([widgets.Label('Select your Image!'),
 
 def prediction(image):
   img = PILImage.create(image)
-  with out_pl : display(img.to_thumb(128))
-  out_pl.clear_output()
+  #with out_pl : display(img.to_thumb(128))
+  #out_pl.clear_output()
   pred, _, prob = learn.predict(img)
   return int(_)
 
