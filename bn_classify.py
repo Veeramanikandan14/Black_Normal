@@ -7,14 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1c_bgABtJ5_4X6DTXQ5o_4LcOddQ3rzcK
 """
 
-!pip install -Uqq fastbook
 import fastbook
-
-!pip install voila
-!jupyter serverextension enable --sys-prefix voila
-
-!pip install --upgrade ipywidgets
-
 from fastbook import *
 from fastai.vision.widgets import *
 
@@ -25,12 +18,13 @@ path.ls(file_exts='.pkl')
 learn = load_learner(path/'black_normal_classifier.pkl')
 
 #hide_output
-btn_run = widgets.Button(description='Classify')
-btn_run
+#btn_run = widgets.Button(description='Classify')
+#btn_run
 
-out_pl = widgets.Output()
-lbl_pred = widgets.Label()
+#out_pl = widgets.Output()
+#lbl_pred = widgets.Label()
 
+"""
 def on_click_classify(change):
     img = PILImage.create(btn_upload.data[-1])
     out_pl.clear_output()
@@ -45,4 +39,15 @@ btn_upload = widgets.FileUpload()
 #hide_output
 VBox([widgets.Label('Select your Image!'), 
       btn_upload, btn_run, out_pl, lbl_pred])
+"""
 
+def prediction(image):
+  img = PILImage.create(image)
+  with out_pl : display(img.to_thumb(128))
+  out_pl.clear_output()
+  pred, _, prob = learn.predict(img)
+  return int(_)
+
+img_path = './WIN_20230331_12_25_29_Pro.jpg'
+out = prediction(img_path)
+print(out)
