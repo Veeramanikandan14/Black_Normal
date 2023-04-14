@@ -8,6 +8,8 @@ Original file is located at
 import fastbook
 from fastbook import *
 from fastai.vision.widgets import *
+
+print("Hello")
 path = Path('.')
 path.ls(file_exts='.pkl')
 learn = load_learner(path/'black_normal_classifier.pkl')
